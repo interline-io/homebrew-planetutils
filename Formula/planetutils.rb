@@ -7,8 +7,8 @@ class Planetutils < Formula
   desc "Scripts to maintain your own OpenStreetMap planet"
   homepage "https://github.com/interline-io/planetutils"
   url "https://github.com/interline-io/planetutils.git",
-      :tag => "v0.2.5"
-  sha256 "4a7d0d5ce0b4ee997db3fe5bed4cd5fcf4cdc9be"
+      :tag => "v0.2.6"
+  sha256 "363a69ac859604a81eb83c23582a35c17e2db43b"
 
   depends_on "osmctools"
   depends_on "osmosis"
@@ -57,6 +57,8 @@ class Planetutils < Formula
     url "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"
     sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
   end
+
+  # TODO: add google-cloud-storage
 
   def install
     # Create a virtualenv in `libexec`. If your app needs Python 3, make sure that
