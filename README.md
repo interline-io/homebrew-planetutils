@@ -4,8 +4,16 @@ Formulas for installing [Interline PlanetUtils](https://github.com/interline-io/
 
 ## Installation
 
+For the full PlanetUtils package (including dependencies):
+
 ```sh
 brew install interline-io/planetutils/planetutils
+```
+
+If you only want to make direct use of [OSM C Tools](https://gitlab.com/osm-c-tools/osmctools/blob/master/README.md):
+
+```sh
+brew install interline-io/planetutils/osmctools
 ```
 
 ## Usage
