@@ -1,16 +1,12 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook.html
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Planetutils < Formula
   include Language::Python::Virtualenv
 
   desc "Scripts to maintain your own OpenStreetMap planet"
   homepage "https://github.com/interline-io/planetutils"
   url "https://github.com/interline-io/planetutils.git",
-      :tag => "v0.3.0"
-  sha256 "3c167207ad8237a00911893c9cd7b68802cc1795"
-  revision 2
-
+      :tag => "v0.3.2"
+  sha256 "1bfed64a51214dd0059b22261da228f37e454568"
+  revision 3
 
   depends_on "osmctools"
   depends_on "osmosis"
@@ -87,19 +83,17 @@ class Planetutils < Formula
     url "https://files.pythonhosted.org/packages/ee/11/7c59620aceedcc1ef65e156cc5ce5a24ef87be4107c2b74458464e437a5d/urllib3-1.22.tar.gz"
     sha256 "cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"
   end
+  ###
+  # Python packages required for osmium
+  # generated using https://github.com/tdsmith/homebrew-pypi-poet
+  ###
+  resource "osmium" do
+    url "https://files.pythonhosted.org/packages/7a/eb/63d7af416ee6126c96a3e5c057750e266da5d1eecc108a6fe87cad9e98c9/osmium-2.14.1.tar.gz"
+    sha256 "14b8fe5698d39d3926079bc5f5e4b7c369ffc9d8fcc1cc4435daff038d1f2323"
+  end
 
   def install
-    # Create a virtualenv in `libexec`. If your app needs Python 3, make sure that
-    # `depends_on "python3"` is declared, and use `virtualenv_create(libexec, "python3")`.
-    venv = virtualenv_create(libexec)
-    # Install all of the resources declared on the formula into the virtualenv.
-    venv.pip_install resources
-    # `pip_install_and_link` takes a look at the virtualenv's bin directory
-    # before and after installing its argument. New scripts will be symlinked
-    # into `bin`. `pip_install_and_link buildpath` will install the package
-    # that the formula points to, because buildpath is the location where the
-    # formula's tarball was unpacked.
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
@@ -107,5 +101,5 @@ class Planetutils < Formula
     # output = shell_output("#{bin}/valhalla_service", 1)
     # assert_match "Usage: #{bin}/valhalla_service config/file.json", output
     system "true"
-end
+  end
 end
