@@ -7,7 +7,7 @@ class Planetutils < Formula
       :tag => "v0.4.0"
   sha256 "1f0918f7c4ab15df1f2dcecc1d892970ac98aae0"
   revision 1
-
+ 
   depends_on "osmctools"
   depends_on "osmosis"
   depends_on "python3"
