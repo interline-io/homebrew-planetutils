@@ -4,36 +4,40 @@ class Planetutils < Formula
   desc "Scripts to maintain your own OpenStreetMap planet"
   homepage "https://github.com/interline-io/planetutils"
   url "https://github.com/interline-io/planetutils.git",
-      :tag => "v0.3.2"
-  sha256 "1bfed64a51214dd0059b22261da228f37e454568"
-  revision 3
+      :tag => "v0.4.0"
+  sha256 "1f0918f7c4ab15df1f2dcecc1d892970ac98aae0"
+  revision 1
 
   depends_on "osmctools"
   depends_on "osmosis"
-  depends_on "python" if MacOS.version <= :snow_leopard # we need Python 2.7
+  depends_on "python3"
+
+  ###
+  # Python packages required for future
+  # generated using https://github.com/tdsmith/homebrew-pypi-poet
+  ###
+  resource "future" do
+    url "https://files.pythonhosted.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz"
+    sha256 "e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+  end
 
   ###
   # Python packages required for boto3
   # generated using https://github.com/tdsmith/homebrew-pypi-poet
   ###
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/03/ae/d901d36291222b097771a03e42e6e2d9c55a70f8808dedc6fc5ff5af96f9/boto3-1.5.33.tar.gz"
-    sha256 "239717ef87f1a073a73000af32bbc6828f50063514d934028bd8dc566c2837a6"
+    url "https://files.pythonhosted.org/packages/f0/f5/55d4e19021cf4b6ee716861c1eb2d7a58c964b0518d77af732acde42b27f/boto3-1.7.57.tar.gz"
+    sha256 "e98692ba74c85ed45b7cf4cfbafd8676ca85a9313f2433d4c3275f7dd9e80263"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/30/5f/499d676f1048b627ac594a2513acb01d5b32a426a2f474fb6ba95a50c3b3/botocore-1.8.47.tar.gz"
-    sha256 "3def0a1ced4cb77624454d77988f64642fd365001fbcedf2c809ce72ec73a406"
+    url "https://files.pythonhosted.org/packages/bf/d5/bf00026563a628a96b3f32ab7831dfa06360ba0712df436276a936baa5dd/botocore-1.10.57.tar.gz"
+    sha256 "f15a09885492ea8b4c5d01d44af11e9938c9c17e09e1fe0d53701023023b2e56"
   end
 
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"
     sha256 "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"
-  end
-
-  resource "futures" do
-    url "https://files.pythonhosted.org/packages/1f/9e/7b2ff7e965fc654592269f2906ade1c7d705f1bf25b7d469fa153f7d19eb/futures-3.2.0.tar.gz"
-    sha256 "9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265"
   end
 
   resource "jmespath" do
@@ -42,8 +46,8 @@ class Planetutils < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/54/bb/f1db86504f7a49e1d9b9301531181b00a1c7325dc85a29160ee3eaa73a54/python-dateutil-2.6.1.tar.gz"
-    sha256 "891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"
+    url "https://files.pythonhosted.org/packages/c5/39/4da7c2dbc4f023fba5fb2325febcadf0d0ce0efdc8bd12083a0f65d20653/python-dateutil-2.7.2.tar.gz"
+    sha256 "9d8074be4c993fbe4947878ce593052f71dac82932a677d49194d8ce9778002e"
   end
 
   resource "s3transfer" do
@@ -55,13 +59,14 @@ class Planetutils < Formula
     url "https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe/six-1.11.0.tar.gz"
     sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
   end
+
   ###
   # Python packages required for requests
   # generated using https://github.com/tdsmith/homebrew-pypi-poet
   ###
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/15/d4/2f888fc463d516ff7bf2379a4e9a552fef7f22a94147655d9b1097108248/certifi-2018.1.18.tar.gz"
-    sha256 "edbc3f203427eef571f79a7692bb160a2b0f7ccaa31953e99bd17e307cf63f7d"
+    url "https://files.pythonhosted.org/packages/4d/9c/46e950a6f4d6b4be571ddcae21e7bc846fcbb88f1de3eff0f6dd0a6be55d/certifi-2018.4.16.tar.gz"
+    sha256 "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"
   end
 
   resource "chardet" do
@@ -83,6 +88,7 @@ class Planetutils < Formula
     url "https://files.pythonhosted.org/packages/ee/11/7c59620aceedcc1ef65e156cc5ce5a24ef87be4107c2b74458464e437a5d/urllib3-1.22.tar.gz"
     sha256 "cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"
   end
+
   ###
   # Python packages required for osmium
   # generated using https://github.com/tdsmith/homebrew-pypi-poet
