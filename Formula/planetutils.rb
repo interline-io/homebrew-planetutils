@@ -4,8 +4,8 @@ class Planetutils < Formula
   desc "Scripts to maintain your own OpenStreetMap planet"
   homepage "https://github.com/interline-io/planetutils"
   url "https://github.com/interline-io/planetutils.git",
-      :tag => "v0.4.0"
-  sha256 "1f0918f7c4ab15df1f2dcecc1d892970ac98aae0"
+      :tag => "v0.4.1"
+  sha256 "2a8793df35b325966c37bc0d586ab402cb9266fb"
  
   depends_on "osmctools"
   depends_on "osmosis"
