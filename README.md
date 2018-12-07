@@ -10,6 +10,8 @@ For the full PlanetUtils package (including dependencies):
 brew install interline-io/planetutils/planetutils
 ```
 
+NOTE: Run `pip install osmium` manually if you want to use `osm_planet_update --toolchain=osmium`
+
 If you only want to make direct use of [OSM C Tools](https://gitlab.com/osm-c-tools/osmctools/blob/master/README.md):
 
 ```sh

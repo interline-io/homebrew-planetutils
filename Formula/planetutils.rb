@@ -4,12 +4,15 @@ class Planetutils < Formula
   desc "Scripts to maintain your own OpenStreetMap planet"
   homepage "https://github.com/interline-io/planetutils"
   url "https://github.com/interline-io/planetutils.git",
-      :tag => "v0.4.1"
-  sha256 "2a8793df35b325966c37bc0d586ab402cb9266fb"
+      :tag => "v0.4.5"
+  sha256 "da21fff79fa74ee5101b9a9a789bde642c78e18a"
  
   depends_on "osmctools"
   depends_on "osmosis"
+  depends_on "gdal"
   depends_on "python3"
+  # TODO: fix this
+  # depends_on "boost-python3" # for pyosmium
 
   ###
   # Python packages required for future
@@ -92,10 +95,11 @@ class Planetutils < Formula
   # Python packages required for osmium
   # generated using https://github.com/tdsmith/homebrew-pypi-poet
   ###
-  resource "osmium" do
-    url "https://files.pythonhosted.org/packages/7a/eb/63d7af416ee6126c96a3e5c057750e266da5d1eecc108a6fe87cad9e98c9/osmium-2.14.1.tar.gz"
-    sha256 "14b8fe5698d39d3926079bc5f5e4b7c369ffc9d8fcc1cc4435daff038d1f2323"
-  end
+  # TODO: fix this
+  # resource "osmium" do
+  #   url "https://files.pythonhosted.org/packages/f1/74/4b06a023c19006133309bfbc5460bede50f451089c01ca7fa9caa1d06bf4/osmium-2.14.3.tar.gz"
+  #   sha256 "df4052d2aa7e66a010d11768bea6f139c60f1b31ef23a8f81d1698c62ce5674e"
+  # end
 
   def install
     virtualenv_install_with_resources
