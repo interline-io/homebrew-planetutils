@@ -9,7 +9,7 @@ class Planetutils < Formula
   depends_on "osmctools"
   depends_on "osmosis"
   depends_on "gdal"
-  depends_on "python3"
+  depends_on "python3.8"
   # TODO: fix this
   # depends_on "boost-python3" # for pyosmium
 
